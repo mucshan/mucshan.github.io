@@ -4,10 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Customer Information Form</title>
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  form {
+    width: 400px;
+  }
+</style>
+
+  
 </head>
 <body>
-<h2>Customer Information Form</h2>
+<div class="container">
+  
 <form action="submit.php" method="post">
+  <h2>Customer Information Form</h2>
   <label for="nric">NRIC:</label><br>
   <input type="text" id="nric" name="nric" required><br><br>
   <label for="name">Name:</label><br>
@@ -20,5 +35,6 @@
   <textarea id="address" name="address" rows="4" required></textarea><br><br>
   <input type="submit" value="Submit">
 </form>
+</div>
 </body>
 </html>
