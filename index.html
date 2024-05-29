@@ -16,7 +16,7 @@
             }
 
             const targetTime = new Date(`${dateInput}T${timeInput}`);
-            const checkInterval = 1000; // Check every second
+            const checkInterval = 100; // Check every second
 
             function checkTime() {
                 const now = new Date();
@@ -46,7 +46,8 @@
     </script>
 </head>
 <body>
-    <h1>Schedule a URL to Open at a Specific Time</h1>
+    <h1> 欢迎黄总前来指导工作</h1>
+    <h2>Schedule a URL to Open at a Specific Time</h2>
     <form onsubmit="event.preventDefault(); scheduleUrlOpen();">
         <label for="date">Date:</label>
         <input type="date" id="date" required><br><br>
