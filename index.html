@@ -16,14 +16,28 @@
             }
 
             const targetTime = new Date(`${dateInput}T${timeInput}`);
-            const checkInterval = 100; // Check every second
+            const checkInterval = 1000; // Check every second
 
             function checkTime() {
                 const now = new Date();
-                if (now >= targetTime) {
+                const timeDifference = targetTime - now;
+                
+                if (timeDifference <= 0) {
                     window.open(urlInput, '_blank');
                     clearInterval(intervalId);
+                    document.getElementById('countdown').innerText = "The URL has been opened!";
+                } else {
+                    updateCountdown(timeDifference);
                 }
+            }
+
+            function updateCountdown(timeDifference) {
+                const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                document.getElementById('countdown').innerText = 
+                    `Time until opening: ${hours}h ${minutes}m ${seconds}s`;
             }
 
             const intervalId = setInterval(checkTime, checkInterval);
@@ -42,5 +56,6 @@
         <input type="url" id="url" required><br><br>
         <button type="submit">Schedule</button>
     </form>
+    <h2 id="countdown">Enter the details and click 'Schedule' to start the countdown.</h2>
 </body>
 </html>
