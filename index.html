@@ -37,7 +37,7 @@
                 const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
                 document.getElementById('countdown').innerText = 
-                    `Time until opening: ${hours}h ${minutes}m ${seconds}s`;
+                    `黄总别急，报名网页即将打开：: ${hours}h ${minutes}m ${seconds}s`;
             }
 
             const intervalId = setInterval(checkTime, checkInterval);
@@ -47,7 +47,7 @@
 </head>
 <body>
     <h1> 欢迎黄总前来指导工作</h1>
-    <h2>Schedule a URL to Open at a Specific Time</h2>
+    <h2>指定打开的网页和时间</h2>
     <form onsubmit="event.preventDefault(); scheduleUrlOpen();">
         <label for="date">Date:</label>
         <input type="date" id="date" required><br><br>
