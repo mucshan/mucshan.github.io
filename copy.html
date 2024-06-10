@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy to Clipboard</title>
+    <style>
+        .input-group {
+            margin-bottom: 10px;
+        }
+        .input-group input {
+            padding: 5px;
+            font-size: 16px;
+        }
+        .input-group button {
+            padding: 5px 10px;
+            font-size: 16px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="input-group">
+        <input type="text" id="input1" placeholder="Enter text here">
+        <button onclick="copyToClipboard('input1')">Copy</button>
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="input2" placeholder="Enter text here">
+        <button onclick="copyToClipboard('input2')">Copy</button>
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="input3" placeholder="Enter text here">
+        <button onclick="copyToClipboard('input3')">Copy</button>
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="input4" placeholder="Enter text here">
+        <button onclick="copyToClipboard('input4')">Copy</button>
+    </div>
+
+    <script>
+        function copyToClipboard(inputId) {
+            // Get the input field
+            var inputField = document.getElementById(inputId);
+
+            // Select the text
+            inputField.select();
+            inputField.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text
+            document.execCommand("copy");
+
+            // Alert the copied text (optional)
+            alert("Copied the text: " + inputField.value);
+        }
+    </script>
+
+</body>
+</html>
