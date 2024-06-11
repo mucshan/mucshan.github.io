@@ -23,22 +23,22 @@
 <body>
 
     <div class="input-group">
-        <input type="text" id="input1" placeholder="Enter text here">
+        <input type="text" id="input1" placeholder="Enter text here" value="S6861338B">
         <button id="button1" onclick="copyToClipboard('input1', 'button1')">Copy</button>
     </div>
 
     <div class="input-group">
-        <input type="text" id="input2" placeholder="Enter text here">
+        <input type="text" id="input2" placeholder="Enter text here" value="Huang xiaodong">
         <button id="button2" onclick="copyToClipboard('input2', 'button2')">Copy</button>
     </div>
 
     <div class="input-group">
-        <input type="text" id="input3" placeholder="Enter text here">
+        <input type="text" id="input3" placeholder="Enter text here" value="huangxiaodongsg@gmail.com">
         <button id="button3" onclick="copyToClipboard('input3', 'button3')">Copy</button>
     </div>
 
     <div class="input-group">
-        <input type="text" id="input4" placeholder="Enter text here">
+        <input type="text" id="input4" placeholder="Enter text here" value="90581777">
         <button id="button4" onclick="copyToClipboard('input4', 'button4')">Copy</button>
     </div>
 
