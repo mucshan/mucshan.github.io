@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy to Clipboard</title>
+    <style>
+        .input-group {
+            margin-bottom: 10px;
+        }
+        .input-group input {
+            padding: 5px;
+            font-size: 16px;
+        }
+        .input-group button {
+            padding: 5px 10px;
+            font-size: 16px;
+            margin-left: 5px;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="input-group">
+        <input type="text" id="input1" value="S6861338B">
+        <button id="button1" onclick="copyToClipboard('input1', 'button1')">Copy</button>
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="input2" value="Huang xiaodong">
+        <button id="button2" onclick="copyToClipboard('input2', 'button2')">Copy</button>
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="input3" value="huangxiaodongsg@gmail.com">
+        <button id="button3" onclick="copyToClipboard('input3', 'button3')">Copy</button>
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="input4" value="90581777">
+        <button id="button4" onclick="copyToClipboard('input4', 'button4')">Copy</button>
+    </div>
+
+    <script>
+        function copyToClipboard(inputId, buttonId) {
+            // Get the input field
+            var inputField = document.getElementById(inputId);
+
+            // Select the text
+            inputField.select();
+            inputField.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text
+            document.execCommand("copy");
+
+            // Change button color to green
+            var button = document.getElementById(buttonId);
+            var originalColor = button.style.backgroundColor;
+            button.style.backgroundColor = 'green';
+
+            // Revert button color to original after 1 second
+            setTimeout(function() {
+                button.style.backgroundColor = originalColor;
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>
